@@ -16,8 +16,8 @@ class SinglePost extends Component {
         }
     }
     componentDidMount() {
-        console.log(this.props.match.params.postsid);
-        fetch(`${SINGLE_POST}/?$_POSTId`, {
+        console.log(this.props.match.params.postId);
+        fetch(`${SINGLE_POST}/${this.props.match.params.postId}`, {
             mthod: 'GET'
         })
         .then(response=>response.json())
@@ -30,6 +30,7 @@ class SinglePost extends Component {
     }
  
   render() {
+      const {post} = this.state
     return (
         <div className="container">
             <Navbar />
@@ -39,7 +40,7 @@ class SinglePost extends Component {
                 </div>
                 <div>
                     <h3>
-                        {this.state.post.title.rendered}
+                        {post && post.title.rendered}
                     </h3>
                 </div>
             </div>
