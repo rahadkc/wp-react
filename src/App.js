@@ -19,7 +19,7 @@ class App extends Component {
           <Route exact path="/search" component={Search} />
           <Route exact path="/categories" component={Categories} />
           <Route exact path="/comments-info" component={Comments} />
-          <Route exact path="/single-post" component={SinglePost} />
+          <Route exact path="/single-post/:postId" component={SinglePost} />
         </div>
       </Router>
     );
